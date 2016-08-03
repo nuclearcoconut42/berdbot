@@ -3,7 +3,7 @@ import random
 
 @sopel.module.commands('berd')
 def berd(bot, trigger):
-    if args is None:
+    if trigger.group(2) is None:
         args = []
     else:
         args = trigger.group(2).strip().split(' ')
