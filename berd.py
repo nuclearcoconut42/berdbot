@@ -3,7 +3,10 @@ import random
 
 @sopel.module.commands('berd')
 def berd(bot, trigger):
-    args = trigger.group(2).strip().split(' ')
+    if args is None:
+        args = []
+    else:
+        args = trigger.group(2).strip().split(' ')
     berds = [".>.", ".<.", "berd", ":>", "<:", "'v'", "tweet", "chirp"]
     berdEmotes = ["berds", "tweets at", "chirps at"]
     if args is None:
