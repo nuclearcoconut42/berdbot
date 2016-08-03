@@ -8,12 +8,12 @@ def berd(bot, trigger):
     berdEmotes = ["berds", "tweets at", "chirps at"]
     if args is None:
         if(random.randint(0,1)):
-            bot.say(random.choice(berds)
+            bot.say(random.choice(berds))
         else:
             bot.action(random.choice(berdEmotes) + ' ' + trigger.nick)
     else:
         if(random.randint(0,1)):
-            bot.say(args[0] + ": " + random.choice(berds)
+            bot.say(args[0] + ": " + random.choice(berds))
         else:
             bot.action(random.choice(berdEmotes) + ' ' + args[0])
 
