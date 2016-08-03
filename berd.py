@@ -3,12 +3,19 @@ import random
 
 @sopel.module.commands('berd')
 def berd(bot, trigger):
+    args = trigger.group(2).strip().split(' ')
     berds = [".>.", ".<.", "berd", ":>", "<:", "'v'", "tweet", "chirp"]
     berdEmotes = ["berds", "tweets at", "chirps at"]
-    if(random.randint(0,1)):
-        bot.say(random.choice(berds))
+    if args is None:
+        if(random.randint(0,1)):
+            bot.say(random.choice(berds)
+        else:
+            bot.action(random.choice(berdEmotes) + ' ' + trigger.nick)
     else:
-        bot.action(random.choice(berdEmotes) + ' ' + trigger.nick)
+        if(random.randint(0,1)):
+            bot.say(args[0] + ": " + random.choice(berds)
+        else:
+            bot.action(random.choice(berdEmotes) + ' ' + args[0])
 
 @sopel.module.commands('bots')
 def bots(bot, trigger):
