@@ -4,7 +4,7 @@ import random
 @sopel.module.commands('berd')
 def berd(bot, trigger):
     if trigger.group(2) is None:
-        args = []
+        args = None
     else:
         args = trigger.group(2).strip().split(' ')
     berds = [".>.", ".<.", "berd", ":>", "<:", "'v'", "tweet", "chirp"]
